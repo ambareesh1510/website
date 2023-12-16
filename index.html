@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <link rel="stylesheet" href="styles.css">
+        <title>Ambareesh Shyam Sundar</title>
+    </head>
+    <body>
+        <div style="width: 100%; height: 100%;" x-data="{page: 'home'}">
+            <div
+                class="panel"
+                :class="page=='home' ? 'panel-loaded' : 'panel-unloaded'"
+            >
+                    <span id="name">Ambareesh Shyam Sundar</span>
+                    <span id="major">CS and Mathematics at Georgia Tech</span>
+                    <span id="links">
+                        <a href="https://github.com/ambareesh1510"><img src="./assets/github-mark.svg"/></a><a href="https://www.linkedin.com/in/ambareesh-shyam-sundar/"><img src="./assets/linkedin.svg"></img></a><a href="mailto:ambareesh@gatech.edu"><img src="./assets/outlook.svg"></img></a>
+                    </span>
+                <div>
+                <span class="nav-button" @click="(e) => {page = 'about'}">about me</span>
+                •
+                <span class="nav-button" @click="(e) => {page = 'projects'}">projects</span>
+                •
+                <span class="nav-button" @click="(e) => {page = 'skills-experience'}">skills + experience</span>
+                •
+                <span class="nav-button" @click="(e) => {page = 'resume-cv'}">resume/CV</span>
+                </div>
+            </div>
+            <div
+                class="panel"
+                :class="page=='projects' ? 'panel-loaded' : 'panel-unloaded'"
+            >
+                    <button @click="(e) => {page = 'home'}">Return to home</button>
+                    <span id="name">Projects</span>
+                    <div
+                        :class="page=='projects' ? 'projects-loaded' : 'projects-unloaded'"
+                    >
+                    asdfsafd
+                    </div>
+            </div>
+        </div>
+        <!-- saving this for later
+        <h1 x-data="{pos}" x-text="pos"></h1>
+        <svg x-data="{ colors: [1, 2, 3] }" style="width: 100vw; height: 100vh">
+            <circle cx="50%" cy="40%" r="35" />
+            <text text-anchor="middle" dominant-baseline="middle" x="50vw" y="50vh">Ambareesh Shyam Sundar</text>
+            <template x-for="color in colors">
+                <circle :cx="50 + color * 100" :cy="40 + color * 100" r="35" />
+            </template>
+        </svg>
+        <script>
+            let pos = '200';
+        </script>
+        <script>
+            (function(){ 
+              var templates = document.querySelectorAll('svg template');
+              var el, template, attribs, attrib, count, child, content;
+              for (var i=0; i<templates.length; i++) {
+                el = templates[i];
+                template = el.ownerDocument.createElement('template');
+                el.parentNode.insertBefore(template, el);
+                attribs = el.attributes;
+                count = attribs.length;
+                while (count-- > 0) {
+                  attrib = attribs[count];
+                  template.setAttribute(attrib.name, attrib.value);
+                  el.removeAttribute(attrib.name);
+                }
+                el.parentNode.removeChild(el);
+                content = template.content;
+                while ((child = el.firstChild)) {
+                  content.appendChild(child);
+                }
+              }
+            })();
+        </script>
+        -->
+    </body>
+</html>
