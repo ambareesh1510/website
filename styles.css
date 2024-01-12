@@ -9,13 +9,28 @@ body {
     width: 96%;
     max-height: 100%;
     max-width: 100%;
-    background-color: #faebff;
+    background-color: #f1d4fa;
+}
+
+.header {
+    text-align: center;
+    padding: 10px 0px 0px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.header * {
+    display: inline-block;
+    max-height: 100%;
 }
 
 .panel {
     text-align: center;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,15 +45,19 @@ body {
 
 
 #name {
-    font-size: 360%;
+    font-size: 270%;
     font-weight: bold;
     font-family: "Poppins", sans-serif;
 }
 
 #major {
-    font-size: 180%;
+    font-size: 140%;
     font-weight: bold;
     font-family: "Poppins", sans-serif;
+}
+
+.nav-links {
+    padding: 10px 0px 0px 0px;
 }
 
 #links {
@@ -54,7 +73,7 @@ body {
     text-decoration: underline dashed;
     text-decoration-color: #000000;
     color: #000000;
-    transition: color 0.3s;
+    /* transition: color 0.3s; */
 }
 
 .divider {
@@ -64,16 +83,13 @@ body {
 .nav-button:hover {
     text-decoration-color: #854c03;
     color: #854c03;
-    transition: color 0.3s;
+    /* transition: color 0.3s; */
 }
 
-.back-button {
-    font-size: 80%;
-}
 
 .panel-content {
     font-size: 120%;
-    width: 70%;
+    width: 50%;
     padding: 2% 0% 0% 0%;
     text-align: left;
     display: flex;
@@ -91,70 +107,80 @@ body {
 .panel-content li {
     margin: 0.3%;
     display: list-item;
-    list-style-type: "~  ";
     /* list-style-type: "\1F44D"; */
 }
 
-.panel-unloaded {
-    opacity: 0%;
-    height: 0%;
-    transition: opacity 1s, height 1s, transform 1s;
+
+@keyframes animate-bullets-out {
+    0% {
+        font-size: 100%;
+        /* content: "~   "; */
+    }
+
+    50% {
+        font-size: 0%;
+        content: "🤓  ";
+        /* content: "❓  "; */
+    }
+
+    100% {
+        font-size: 100%;
+        content: "🤓  ";
+        /* content: "❓  "; */
+    }
 }
 
-.panel-loaded {
-    opacity: 100%;
+.panel-content li::marker {
+    content: "~  ";
+    /* opacity: 50%; */
+}
+
+.panel-content li:hover::marker{
+    /* content: "🤓  "; */
+    animation-name: animate-bullets-out;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.interests li:nth-child(1)::marker {
+    content: "🖳  ";
+}
+
+.interests li:nth-child(2)::marker {
+    content: "💽  ";
+}
+
+.interests li:nth-child(3)::marker {
+    content: "🕹️  ";
+}
+
+.interests li:nth-child(4)::marker {
+    content: "🖼️  ";
+}
+
+.footer {
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.footer * {
+    display: inline-block;
+    max-height: 100%;
+}
+
+.webpage-body {
     height: 100%;
-    transition: opacity 1s, height 1s, transform 1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.about-me-unloaded {
-    opacity: 0%;
-    height: 0px;
-    transition: height 1s, opacity 1s;
-}
-
-.about-me-loaded {
-    height: 600px;
-    opacity: 100%;
-    transition: height 0.8s ease-in-out, opacity 1s;
-    transition-delay: 1000ms;
-}
-
-.projects-unloaded {
-    opacity: 0%;
-    height: 0px;
-    transition: height 1s, opacity 1s;
-}
-
-.projects-loaded {
-    height: 600px;
-    opacity: 100%;
-    transition: height 0.8s ease-in-out, opacity 1s;
-    transition-delay: 1000ms;
-}
-
-.skills-unloaded {
-    opacity: 0%;
-    height: 0px;
-    transition: height 1s, opacity 1s;
-}
-
-.skills-loaded {
-    height: 600px;
-    opacity: 100%;
-    transition: height 0.8s ease-in-out, opacity 1s;
-    transition-delay: 1000ms;
-}
-
-.resume-unloaded {
-    opacity: 0%;
-    height: 0px;
-    transition: height 1s, opacity 1s;
-}
-
-.resume-loaded {
-    height: 600px;
-    opacity: 100%;
-    transition: height 0.8s ease-in-out, opacity 1s;
-    transition-delay: 1000ms;
+.attribution {
+    font-size: 80%;
+    opacity: 70%;
 }
