@@ -9,6 +9,7 @@ body {
     width: 96%;
     max-height: 100%;
     max-width: 100%;
+    background-color: #faebff;
 }
 
 .panel {
@@ -50,27 +51,73 @@ body {
 }
 
 .nav-button {
-    padding: 0px 5px;
+    text-decoration: underline dashed;
+    text-decoration-color: #000000;
     color: #000000;
     transition: color 0.3s;
 }
 
-.nav-button:hover {
+.divider {
     padding: 0px 5px;
+}
+
+.nav-button:hover {
+    text-decoration-color: #854c03;
     color: #854c03;
     transition: color 0.3s;
+}
+
+.back-button {
+    font-size: 80%;
+}
+
+.panel-content {
+    font-size: 120%;
+    width: 70%;
+    padding: 2% 0% 0% 0%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-content p {
+    margin: 0.6%;
+}
+
+.panel-content ul {
+    margin: 0.6%;
+}
+
+.panel-content li {
+    margin: 0.3%;
+    display: list-item;
+    list-style-type: "~  ";
+    /* list-style-type: "\1F44D"; */
 }
 
 .panel-unloaded {
     opacity: 0%;
     height: 0%;
-    transition: opacity 1s, height 1s;
+    transition: opacity 1s, height 1s, transform 1s;
 }
 
 .panel-loaded {
     opacity: 100%;
     height: 100%;
-    transition: opacity 1s, height 1s;
+    transition: opacity 1s, height 1s, transform 1s;
+}
+
+.about-me-unloaded {
+    opacity: 0%;
+    height: 0px;
+    transition: height 1s, opacity 1s;
+}
+
+.about-me-loaded {
+    height: 600px;
+    opacity: 100%;
+    transition: height 0.8s ease-in-out, opacity 1s;
+    transition-delay: 1000ms;
 }
 
 .projects-unloaded {
@@ -80,9 +127,34 @@ body {
 }
 
 .projects-loaded {
-    height: 1000px;
+    height: 600px;
     opacity: 100%;
-    transition: height 1s, opacity 1s;
+    transition: height 0.8s ease-in-out, opacity 1s;
     transition-delay: 1000ms;
 }
 
+.skills-unloaded {
+    opacity: 0%;
+    height: 0px;
+    transition: height 1s, opacity 1s;
+}
+
+.skills-loaded {
+    height: 600px;
+    opacity: 100%;
+    transition: height 0.8s ease-in-out, opacity 1s;
+    transition-delay: 1000ms;
+}
+
+.resume-unloaded {
+    opacity: 0%;
+    height: 0px;
+    transition: height 1s, opacity 1s;
+}
+
+.resume-loaded {
+    height: 600px;
+    opacity: 100%;
+    transition: height 0.8s ease-in-out, opacity 1s;
+    transition-delay: 1000ms;
+}

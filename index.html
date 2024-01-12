@@ -9,7 +9,7 @@
         <title>Ambareesh Shyam Sundar</title>
     </head>
     <body>
-        <div style="width: 100%; height: 100%;" x-data="{page: 'home'}">
+        <div style="width: 100%; height: 100%;" x-data="{page: 'about'}">
             <div
                 class="panel"
                 :class="page=='home' ? 'panel-loaded' : 'panel-unloaded'"
@@ -21,62 +21,80 @@
                     </span>
                 <div>
                 <span class="nav-button" @click="(e) => {page = 'about'}">about me</span>
-                •
+                <span class="divider">•</span>
                 <span class="nav-button" @click="(e) => {page = 'projects'}">projects</span>
-                •
+                <span class="divider">•</span>
                 <span class="nav-button" @click="(e) => {page = 'skills-experience'}">skills + experience</span>
-                •
+                <span class="divider">•</span>
                 <span class="nav-button" @click="(e) => {page = 'resume-cv'}">resume/CV</span>
                 </div>
             </div>
             <div
                 class="panel"
+                :class="page=='about' ? 'panel-loaded' : 'panel-unloaded'"
+            >
+                    <span class="nav-button back-button" @click="(e) => {page = 'home'}">(back to home)</span>
+                    <span id="name">about me</span>
+                    <div
+                        class="panel-content"
+                        :class="page=='about' ? 'about-me-loaded' : 'about-me-unloaded'"
+                    >
+                        <p>
+                            Hi! My name is Ambareesh and I'm a freshman at Georgia Tech studying Computer Science (Systems & Architecture/Intelligence) and Mathematics.
+                        </p>
+                        <p>
+                            My interests lie at the intersection of applied mathematics and systems design, and include some of the following:
+                        </p>
+                        <ul>
+                            <li>Programming language and compiler theory</li>
+                            <li>Non von Neumann computing</li>
+                            <li>Game devlopment</li>
+                            <li>Algorithmically generated art</li>
+                        </ul>
+                        <p>
+                            Feel free to check out my <a class="nav-button">projects</a> or <a class="nav-button">skills</a>, or view/download my <a class="nav-button">resume</a>.
+                        </p>
+                    </div>
+            </div>
+            <div
+                class="panel"
                 :class="page=='projects' ? 'panel-loaded' : 'panel-unloaded'"
             >
-                    <button @click="(e) => {page = 'home'}">Return to home</button>
-                    <span id="name">Projects</span>
+                    <span class="nav-button back-button" @click="(e) => {page = 'home'}">(back to home)</span>
+                    <span id="name">projects</span>
                     <div
+                        class="panel-content"
                         :class="page=='projects' ? 'projects-loaded' : 'projects-unloaded'"
                     >
-                    asdfsafd
+                        [INSERT PROJECT PANELS HERE]
+                    </div>
+            </div>
+            <div
+                class="panel"
+                :class="page=='skills-experience' ? 'panel-loaded' : 'panel-unloaded'"
+            >
+                    <span class="nav-button back-button" @click="(e) => {page = 'home'}">(back to home)</span>
+                    <span id="name">skills + experience</span>
+                    <div
+                        class="panel-content"
+                        :class="page=='skills-experience' ? 'skills-loaded' : 'skills-unloaded'"
+                    >
+                        [INSERT SKILLS HERE]
+                    </div>
+            </div>
+            <div
+                class="panel"
+                :class="page=='resume-cv' ? 'panel-loaded' : 'panel-unloaded'"
+            >
+                    <span class="nav-button back-button" @click="(e) => {page = 'home'}">(back to home)</span>
+                    <span id="name">resume/CV</span>
+                    <div
+                        class="panel-content"
+                        :class="page=='resume-cv' ? 'resume-loaded' : 'resume-unloaded'"
+                    >
+                        [INSERT RESUME HERE]
                     </div>
             </div>
         </div>
-        <!-- saving this for later
-        <h1 x-data="{pos}" x-text="pos"></h1>
-        <svg x-data="{ colors: [1, 2, 3] }" style="width: 100vw; height: 100vh">
-            <circle cx="50%" cy="40%" r="35" />
-            <text text-anchor="middle" dominant-baseline="middle" x="50vw" y="50vh">Ambareesh Shyam Sundar</text>
-            <template x-for="color in colors">
-                <circle :cx="50 + color * 100" :cy="40 + color * 100" r="35" />
-            </template>
-        </svg>
-        <script>
-            let pos = '200';
-        </script>
-        <script>
-            (function(){ 
-              var templates = document.querySelectorAll('svg template');
-              var el, template, attribs, attrib, count, child, content;
-              for (var i=0; i<templates.length; i++) {
-                el = templates[i];
-                template = el.ownerDocument.createElement('template');
-                el.parentNode.insertBefore(template, el);
-                attribs = el.attributes;
-                count = attribs.length;
-                while (count-- > 0) {
-                  attrib = attribs[count];
-                  template.setAttribute(attrib.name, attrib.value);
-                  el.removeAttribute(attrib.name);
-                }
-                el.parentNode.removeChild(el);
-                content = template.content;
-                while ((child = el.firstChild)) {
-                  content.appendChild(child);
-                }
-              }
-            })();
-        </script>
-        -->
     </body>
 </html>
