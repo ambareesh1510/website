@@ -1,6 +1,12 @@
-:root {
-    font-family: "Poppins", sans-serif;
+@font-face {
+  font-family: Rodin;
+  src: url(fonts/FOT-Rodin\ Pro\ DB.otf);
 }
+
+:root {
+    font-family: Rodin;
+}
+
 
 body {
     margin: 0px;
@@ -9,7 +15,8 @@ body {
     width: 96%;
     max-height: 100%;
     max-width: 100%;
-    background-color: #f1d4fa;
+    background-color: #dddddd;
+    /* background-color: #f1d4fa; */
 }
 
 .header {
@@ -44,20 +51,24 @@ body {
 }
 
 
-#name {
+#title {
     font-size: 270%;
     font-weight: bold;
-    font-family: "Poppins", sans-serif;
+    line-height: 55px;
+    padding: 0px 0px 5px 0px;
 }
 
-#major {
+#subtitle {
     font-size: 140%;
     font-weight: bold;
-    font-family: "Poppins", sans-serif;
+    line-height: 50px;
 }
 
 .nav-links {
-    padding: 10px 0px 0px 0px;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* width: 30%; */
+    /* padding: 10px 0px 0px 0px; */
 }
 
 #links {
@@ -70,10 +81,10 @@ body {
 }
 
 .nav-button {
-    text-decoration: underline dashed;
+    text-decoration: underline dotted;
     text-decoration-color: #000000;
     color: #000000;
-    /* transition: color 0.3s; */
+    transition: color 0.3s;
 }
 
 .divider {
@@ -83,25 +94,25 @@ body {
 .nav-button:hover {
     text-decoration-color: #854c03;
     color: #854c03;
-    /* transition: color 0.3s; */
+    transition: color 0.3s;
 }
 
 
 .panel-content {
     font-size: 120%;
-    width: 50%;
-    padding: 2% 0% 0% 0%;
+    width: 45%;
+    /* padding: 2% 0% 0% 0%; */
     text-align: left;
     display: flex;
     flex-direction: column;
 }
 
 .panel-content p {
-    margin: 0.6%;
+    margin: 0.6% 0%;
 }
 
 .panel-content ul {
-    margin: 0.6%;
+    margin: 0.6% 0%;
 }
 
 .panel-content li {
@@ -110,52 +121,12 @@ body {
     /* list-style-type: "\1F44D"; */
 }
 
-
-@keyframes animate-bullets-out {
-    0% {
-        font-size: 100%;
-        /* content: "~   "; */
-    }
-
-    50% {
-        font-size: 0%;
-        content: "🤓  ";
-        /* content: "❓  "; */
-    }
-
-    100% {
-        font-size: 100%;
-        content: "🤓  ";
-        /* content: "❓  "; */
-    }
-}
-
 .panel-content li::marker {
-    content: "~  ";
-    /* opacity: 50%; */
+    content: "∗  ";
 }
 
-.panel-content li:hover::marker{
-    /* content: "🤓  "; */
-    animation-name: animate-bullets-out;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-}
-
-.interests li:nth-child(1)::marker {
-    content: "🖳  ";
-}
-
-.interests li:nth-child(2)::marker {
-    content: "💽  ";
-}
-
-.interests li:nth-child(3)::marker {
-    content: "🕹️  ";
-}
-
-.interests li:nth-child(4)::marker {
-    content: "🖼️  ";
+.panel-content p, .panel-content li {
+    line-height: 27px;
 }
 
 .footer {
@@ -174,7 +145,7 @@ body {
 }
 
 .webpage-body {
-    height: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -184,3 +155,40 @@ body {
     font-size: 80%;
     opacity: 70%;
 }
+
+.project-title {
+    font-size: 130%;
+    font-weight: bold;
+}
+
+.project {
+    background-color: unset;
+    padding: 13px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.project:hover {
+    transition: background-color 0.3s;
+    background-color: #cccccc;
+}
+
+.project-skills {
+    font-size: 80%;
+    font-style: italic;
+    margin: 0px !important;
+}
+
+.skills-header {
+    display: flex;
+}
+
+.skills-header:hover + .popup {
+    display: flex;
+}
+
+.popup {
+    display: none;
+}
+
+
