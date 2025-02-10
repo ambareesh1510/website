@@ -1,12 +1,8 @@
-@font-face {
-  font-family: 'Cascadia Code';
-  src: url('fonts/CascadiaCode-Regular.otf');
-}
-
 :root {
-    font-family: Cascadia Code;
+    font-family: Computer Modern Sans;
     font-weight: normal;
-    color: #fffccd;
+    font-size: 13pt;
+    color: #000000;
 }
 
 
@@ -17,7 +13,7 @@ body {
     width: 96%;
     max-height: 100%;
     max-width: 100%;
-    background-color: #111111;
+    background-color: #ffffff;
 }
 
 .header {
@@ -75,7 +71,7 @@ body {
 
 .nav-button {
     text-decoration: underline dotted;
-    text-decoration-thickness: 0.1em;
+    text-decoration-thickness: 0.05em;
     color: inherit;
     transition: color 0.3s;
 }
@@ -85,7 +81,7 @@ body {
 }
 
 .nav-button:hover {
-    color: #d47a2b;
+    color: #a44a0b;
     transition: color 0.3s;
 }
 
@@ -160,7 +156,7 @@ body {
 
 .project:hover {
     transition: background-color 0.3s;
-    background-color: #272727;
+    background-color: #eeeeee;
 }
 
 .project-skills {
