@@ -107,10 +107,6 @@ body {
     display: list-item;
 }
 
-.panel-content li::marker {
-    content: "∗  ";
-}
-
 .panel-content p, .panel-content li {
     line-height: 27px;
 }
